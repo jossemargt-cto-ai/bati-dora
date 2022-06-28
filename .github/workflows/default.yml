@@ -1,0 +1,21 @@
+name: Deployment Metrics (DORA)
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  simulate-deploy:
+    name: Force deployment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # Force sucess event
+    - name: Report Deployment Succeeded
+      uses: cto-ai/action@v1.2
+      id: ctoai-deployment-succeeded
+      with:
+        team_id: ${{ secrets.CTOAI_TEAM_STG }}
+        token: ${{ secrets.CTOAI_TOKEN_STG }}
+        event_name: "deployment"
+        event_action: "succeeded"
