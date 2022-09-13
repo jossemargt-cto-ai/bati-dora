@@ -1,4 +1,4 @@
-name: Deployment Metrics (DORA)
+name: Demo - Deployment Metrics (DORA)
 on:
   push:
     branches:
