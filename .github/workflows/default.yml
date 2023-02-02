@@ -4,13 +4,14 @@ on:
     branches:
       - master
   workflow_dispatch:
-    status:
-      description: 'Deployment status'
-      default: 'success'
-    type: choice
-    options:
-    - success
-    - failure
+    inputs:      
+      status:
+        description: 'Deployment status'
+        default: 'success'
+        type: choice
+        options:
+        - success
+        - failure
 
 jobs:
   simulate-deploy:
