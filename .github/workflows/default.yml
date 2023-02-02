@@ -20,7 +20,6 @@ jobs:
     - name: 'Report Deployment Succeeded'
       if: ${{ inputs.status == 'success' }}
       uses: cto-ai/action@v1.3.0-rc1
-      id: ctoai-action
       with:
         team_id: ${{ secrets.CTOAI_TEAM_STG }}
         token: ${{ secrets.CTOAI_TOKEN_STG }}
@@ -29,7 +28,6 @@ jobs:
     - name: 'Report Deployment Failed'
       if: ${{ inputs.status != 'success' }}
       uses: cto-ai/action@v1.3.0-rc1
-      id: ctoai-action
       with:
         team_id: ${{ secrets.CTOAI_TEAM_STG }}
         token: ${{ secrets.CTOAI_TOKEN_STG }}
