@@ -27,6 +27,7 @@ jobs:
         token: ${{ secrets.CTOAI_TOKEN_STG }}
         event_name: "deployment"
         event_action: "succeeded"
+        repo: 'jossemargt-cto-ai/batidora'
     - name: 'Report Deployment Failed'
       if: ${{ inputs.status != 'success' }}
       # uses: cto-ai/action@v1.3.0-rc1
@@ -36,3 +37,4 @@ jobs:
         token: ${{ secrets.CTOAI_TOKEN_STG }}
         event_name: "deployment"
         event_action: "failed"
+        repo: 'jossemargt-cto-ai/batidora'
